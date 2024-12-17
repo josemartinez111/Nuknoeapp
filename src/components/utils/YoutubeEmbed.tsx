@@ -1,72 +1,53 @@
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-//      COMPONENTS > UI > NAVBAR >> TOGGLE-DARKMODE-ICONS.TSX
+//              COMPONENTS > UTILS > YOUTUBE-EMBED.TSX
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 //                       IMPORTS
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { FunctionComponent, Fragment } from 'react';
-import { FaRegMoon } from 'react-icons/fa';
-import { IoSunnyOutline } from 'react-icons/io5';
-import { twMerge } from 'tailwind-merge';
-import { Show } from '../../utils/Show.tsx';
-import clsx from 'clsx';
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-type ToggleDarkmodeIconsProps = {
-  onClick: () => void;
-  condition: boolean;
-  className?: string;
-  sunClassName?: string;
-  moonClassName?: string;
+type YouTubeEmbedProps = {
+  videoId: string; // The YouTube video ID (required)
+  autoplay?: boolean; // Whether to autoplay the video
+  loop?: boolean; // Whether to loop the video
+  muted?: boolean; // Whether to mute the video on autoplay
+  className?: string; // Custom className for the iframe
+  title?: string; // Title attribute for accessibility
 };
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-export const ToggleDarkmodeIcons: FunctionComponent<ToggleDarkmodeIconsProps> = ({
-  onClick,
-  condition,
+export const YoutubeEmbed: FunctionComponent<YouTubeEmbedProps> = ({
+  videoId,
+  autoplay = false,
+  loop = false,
+  muted = false,
   className = '',
-  sunClassName = '',
-  moonClassName = '',
+  title = 'YouTube Video',
 }) => {
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+  if (!videoId) return <p>Error: Video ID is missing!</p>;
 
+  // Construct embed URL with autoplay, mute, and loop parameters
+  const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
+  embedUrl.searchParams.set('autoplay', autoplay ? '1' : '0');
+  embedUrl.searchParams.set('mute', muted ? '1' : '0');
+  embedUrl.searchParams.set('loop', loop ? '1' : '0');
+  if (loop) embedUrl.searchParams.set('playlist', videoId);
+  embedUrl.searchParams.set('rel', '0'); // Prevents showing related videos
+  embedUrl.searchParams.set('modestbranding', '1'); // Minimal branding
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
   return (
     <Fragment>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
-      <button
-        onClick={onClick}
-        className={twMerge(
-          clsx(
-            'rounded-full p-2',
-            'hover:bg-gray-100 dark:hover:bg-gray-700',
-            'focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600',
-            'transition-colors duration-300',
-            className,
-          ),
-        )}
-        aria-label='Toggle Dark Mode'
-      >
-        <Show
-          condition={condition}
-          then={
-            <IoSunnyOutline
-              className={twMerge(
-                clsx(
-                  'h-6 w-6 text-reggie-orange transition-colors duration-300',
-                  sunClassName,
-                ),
-              )}
-            />
-          }
-          otherwise={
-            <FaRegMoon
-              className={twMerge(
-                clsx('h-6 w-6 text-pink-friday transition-colors duration-300', moonClassName),
-              )}
-            />
-          }
+      <div className='relative w-full'>
+        <iframe
+          className={`h-56 w-full rounded-lg shadow-lg tablet:h-96 desktop:h-[28rem] ${className}`}
+          src={embedUrl.toString()}
+          title={title}
+          allow='autoplay; encrypted-media; picture-in-picture'
+          allowFullScreen
         />
-      </button>
+      </div>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
     </Fragment>
   );

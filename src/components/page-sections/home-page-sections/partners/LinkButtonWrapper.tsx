@@ -1,72 +1,41 @@
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-//      COMPONENTS > UI > NAVBAR >> TOGGLE-DARKMODE-ICONS.TSX
+import clsx from 'clsx';
+//                         PATH
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 //                       IMPORTS
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { FunctionComponent, Fragment } from 'react';
-import { FaRegMoon } from 'react-icons/fa';
-import { IoSunnyOutline } from 'react-icons/io5';
+import { LuKeyboardMusic } from 'react-icons/lu';
 import { twMerge } from 'tailwind-merge';
-import { Show } from '../../utils/Show.tsx';
-import clsx from 'clsx';
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-type ToggleDarkmodeIconsProps = {
-  onClick: () => void;
-  condition: boolean;
+export const LinkButtonWrapper: FunctionComponent<{
+  text: string;
   className?: string;
-  sunClassName?: string;
-  moonClassName?: string;
-};
-//⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-
-export const ToggleDarkmodeIcons: FunctionComponent<ToggleDarkmodeIconsProps> = ({
-  onClick,
-  condition,
-  className = '',
-  sunClassName = '',
-  moonClassName = '',
-}) => {
+}> = ({ text, className }) => {
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
   return (
     <Fragment>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
-      <button
-        onClick={onClick}
+      <a
+        href='/support'
         className={twMerge(
           clsx(
-            'rounded-full p-2',
-            'hover:bg-gray-100 dark:hover:bg-gray-700',
-            'focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600',
-            'transition-colors duration-300',
+            'focus:shadow-outline mb-3 inline-flex',
+            'h-12 w-full transform items-center justify-center',
+            'rounded bg-oh-yea-blue-light px-6 font-medium tracking-wide',
+            'text-white shadow-md transition duration-200',
+            'hover:scale-105 hover:bg-gray-500 focus:outline-none active:opacity-[0.2]',
+            'md:mb-0 md:mr-4 md:w-auto dark:bg-oh-yea-blue dark:hover:bg-gray-600',
             className,
           ),
         )}
-        aria-label='Toggle Dark Mode'
       >
-        <Show
-          condition={condition}
-          then={
-            <IoSunnyOutline
-              className={twMerge(
-                clsx(
-                  'h-6 w-6 text-reggie-orange transition-colors duration-300',
-                  sunClassName,
-                ),
-              )}
-            />
-          }
-          otherwise={
-            <FaRegMoon
-              className={twMerge(
-                clsx('h-6 w-6 text-pink-friday transition-colors duration-300', moonClassName),
-              )}
-            />
-          }
-        />
-      </button>
+        <span className='mr-3'>{text}</span>
+        <LuKeyboardMusic />
+      </a>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
     </Fragment>
   );

@@ -14,11 +14,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'fantum-wave-light': `url('/images/white-light-ai-fantumwave-tech.png')`,
-        'fantum-wave-dark': "url('/images/dark-light-ai-fantumwave-tech.png')",
-        'dark-light-ai': "url('/images/dark-light-ai-fantumwave-tech.png')",
-        'nano-woman-ai': "url('/images/nano-woman-dark.png')",
-        'nano-woman-ai-light': "url('/images/nano-woman-light2.png')",
+        'nuknoe-darkbg': `url('/images/nuknoe-dark.png')`,
       },
       fontFamily: {
         orbitron: ['Orbitron Latin', 'Orbitron', 'sans-serif'],
@@ -66,6 +62,7 @@ export default {
         background: 'var(--background-color)',
         text: 'var(--text-color)',
         cslight: '#ffffff',
+        'nuke-grey': '#5F7074',
         'snow-white': '#FBF5F3',
         'nuke-gray': '#908E96',
         'reggie-orange': '#F75C02',
@@ -75,6 +72,7 @@ export default {
           DEFAULT: '#172554', // Darker blue for light mode
           light: '#01A7FF', // Lighter blue for dark mode
         },
+        'netflix-red': '#E50A15',
         'paynes-blue': '#4F646F',
         platinum: '#DEE7E7',
         'powder-blue': '#A4BFEB',

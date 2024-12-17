@@ -4,9 +4,26 @@
 
 /* Components: router */
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+// page-sections components->router
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+export * from './page-sections/home-page-sections/HomeHeroSection.tsx';
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // utils components->router
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-export * from './utils/FWTImage.tsx';
+export * from './utils/FWTImage';
+export * from './utils/SocialIcons';
+export * from './utils/Switch';
+export * from './utils/SocialIcons';
+export * from './utils/YoutubeEmbed';
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+
+// ui/effects components->router
+// ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+export * from './ui/effects/GradientEffectWrapper';
+export * from './ui/effects/BGGradientEffects';
+export * from './ui/effects/MirrorCardRightSide';
+export * from './ui/effects/DecorativeWave';
+export * from './ui/effects/GradientText';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // metadata components->router
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
@@ -32,7 +49,7 @@ export * from './utils/AnimateSection.tsx';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // pages components->route
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-// export * from './pages/home-page-sections/HeroSection';
+// export * from './pages/home-page-sections/HomeHeroSection';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // components-composables-hooks->route
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
