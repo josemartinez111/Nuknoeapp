@@ -6,7 +6,7 @@
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { Fragment, FunctionComponent } from 'react';
 import { YoutubeEmbed } from '../../utils/YoutubeEmbed.tsx';
-import { LeftCardText } from './LeftCardText.tsx';
+import { LeftCardText } from './subcomponent/LeftCardText.tsx';
 // ⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 export const HomeHeroSection: FunctionComponent = () => {
