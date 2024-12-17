@@ -3,9 +3,8 @@
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 //                       IMPORTS
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-import { FunctionComponent, Fragment, ReactNode, useRef } from 'react';
-import { MotionProps, motion, useInView, useAnimation } from 'framer-motion';
-import { useOnUpdated } from '../../lib';
+import { FunctionComponent, Fragment, ReactNode } from 'react';
+import { MotionProps, motion } from 'framer-motion';
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 type ScrollingEffectProps = MotionProps & {
@@ -25,40 +24,25 @@ export const FWTScrollingEffect: FunctionComponent<ScrollingEffectProps> = ({
   ...motionProps
 }) => {
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-  // Reference for viewport detection
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.7, once: false });
-  const controls = useAnimation();
-  // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-
-  // Scroll handler
-  const handleScroll = () => {
-    window.requestAnimationFrame(() => {
-      isInView ? controls.start('visible') : controls.start('hidden');
-    });
-  };
-
-  useOnUpdated(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isInView, controls]);
-
+  // Animation variants
   const fadeVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
   };
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
   return (
     <Fragment>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
       <motion.section
-        ref={ref}
-        className={className}
+        className={`transition-none ${className}`}
         variants={!disableFade ? fadeVariants : undefined}
         initial='hidden'
-        animate={controls}
         whileInView='visible'
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{
+          once: false,
+          amount: 0.3,
+          margin: '0px 0px -10% 0px',
+        }} // Mobile optimization
         {...motionProps}
       >
         {children}
