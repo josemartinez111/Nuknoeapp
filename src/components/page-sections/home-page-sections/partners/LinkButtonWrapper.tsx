@@ -20,7 +20,7 @@ export const LinkButtonWrapper: FunctionComponent<{
     <Fragment>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
       <a
-        href='/support'
+        href='/*'
         className={twMerge(
           clsx(
             'focus:shadow-outline mb-3 inline-flex',
