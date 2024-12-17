@@ -4,7 +4,11 @@
 //                       IMPORTS
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { Fragment } from 'react';
-import { HomeHeroSection, HomePricingSection } from '../../../../components';
+import {
+  FWTScrollingEffect,
+  HomeHeroSection,
+  HomePricingSection,
+} from '../../../../components';
 // ⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 export default function HomePage() {
@@ -15,10 +19,14 @@ export default function HomePage() {
     <Fragment>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
       {/* HERO SECTION ∞∞∞ */}
-      <HomeHeroSection />
+      <FWTScrollingEffect>
+        <HomeHeroSection />
+      </FWTScrollingEffect>
 
       {/* PRICING SECTION ∞∞∞ */}
-      <HomePricingSection />
+      <FWTScrollingEffect>
+        <HomePricingSection />
+      </FWTScrollingEffect>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
     </Fragment>
   );
