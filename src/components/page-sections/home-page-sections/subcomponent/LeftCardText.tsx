@@ -6,7 +6,7 @@
 import { FunctionComponent, Fragment } from 'react';
 import { twMerge } from 'tailwind-merge';
 import clsx from 'clsx';
-import { LinkButtonWrapper } from './partners/LinkButtonWrapper.tsx';
+import { LinkButtonWrapper } from '../partners/LinkButtonWrapper.tsx';
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 export const LeftCardText: FunctionComponent = () => {

@@ -6,7 +6,8 @@
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // page-sections components->router
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-export * from './page-sections/home-page-sections/HomeHeroSection.tsx';
+export * from './page-sections/home-page-sections/HomeHeroSection';
+export * from './page-sections/home-page-sections/HomePricingSection.tsx';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // utils components->router
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
