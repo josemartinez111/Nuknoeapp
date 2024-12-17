@@ -16,6 +16,7 @@ export * from './utils/SocialIcons';
 export * from './utils/Switch';
 export * from './utils/SocialIcons';
 export * from './utils/YoutubeEmbed';
+export * from './utils/FWTScrollingEffect';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 // ui/effects components->router
