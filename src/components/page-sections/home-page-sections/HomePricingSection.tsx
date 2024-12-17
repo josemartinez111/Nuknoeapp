@@ -5,6 +5,8 @@
 //                       IMPORTS
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { FunctionComponent, Fragment } from 'react';
+import { FaTshirt } from 'react-icons/fa';
+import { FiGift, FiLock, FiVideo } from 'react-icons/fi';
 import { twMerge } from 'tailwind-merge';
 import { NuknoeBGLightmode2 } from '../../../assets';
 import { FWTImage } from '../../utils/FWTImage.tsx';
@@ -42,7 +44,15 @@ export const HomePricingSection: FunctionComponent = () => {
         />
 
         {/* Content - Plan Card */}
-        <div className='relative z-10 overflow-hidden rounded-xl bg-white shadow-md tablet:w-1/2 dark:bg-transparent dark:shadow-lg dark:backdrop-blur-md dark:backdrop-opacity-100'>
+        <div
+          className={twMerge(
+            clsx(
+              'relative z-10 overflow-hidden rounded-xl',
+              'bg-white shadow-md tablet:w-1/2 dark:bg-transparent',
+              'dark:shadow-lg dark:backdrop-blur-md dark:backdrop-opacity-100',
+            ),
+          )}
+        >
           <div className='flex flex-col tablet:flex-row'>
             {/* Image Section */}
             <div className='shrink-0'>
@@ -55,20 +65,24 @@ export const HomePricingSection: FunctionComponent = () => {
 
             {/* Content Section */}
             <div className='p-6 tablet:p-8'>
+              {/* Plan Title */}
               <div className='text-sm font-semibold uppercase tracking-wide text-indigo-500 dark:text-indigo-400'>
-                Basic Plan
+                Support the Journey
               </div>
+
+              {/* Plan Description */}
               <a
                 href='#'
                 className='mt-1 block text-lg font-medium leading-tight text-black hover:underline dark:text-white'
               >
-                Best for small teams
+                Become a member and unlock exclusive perks
               </a>
               <p className='mt-2 text-slate-500 dark:text-gray-400'>
-                Includes all the core features, up to 5 users, and email support.
+                Gain behind-the-scenes access, unreleased tracks, signed merch, and creative
+                tools to inspire your own journey.
               </p>
 
-              {/* Toggle */}
+              {/* Billing Toggle */}
               <div className='mt-6 flex items-center'>
                 <span className='mr-3 text-slate-600 dark:text-gray-400'>Monthly</span>
                 <label htmlFor='toggle' className='flex cursor-pointer items-center'>
@@ -81,34 +95,57 @@ export const HomePricingSection: FunctionComponent = () => {
                 <span className='ml-3 text-slate-600 dark:text-gray-400'>Yearly</span>
               </div>
 
-              {/* Pricing */}
-              <div className='mt-4'>
-                <span className='text-3xl font-bold text-slate-900 dark:text-white'>$29</span>
-                <span className='text-slate-500 dark:text-gray-400'>/mo</span>
+              {/* Offer Highlights */}
+              <div className='mt-4 space-y-4 text-slate-600 dark:text-gray-400'>
+                <div className='flex items-start'>
+                  <FiLock className='mr-2 text-indigo-500 dark:text-indigo-400' />
+                  <p>
+                    <strong>Exclusive Content</strong>: Access unreleased tracks, private live
+                    streams, and behind-the-scenes videos.
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <FaTshirt className='mr-2 text-indigo-500 dark:text-indigo-400' />
+                  <p>
+                    <strong>Fan Merch</strong>: Special discounts on merch drops and
+                    limited-edition signed products.
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <FiVideo className='mr-2 text-indigo-500 dark:text-indigo-400' />
+                  <p>
+                    <strong>Inspiration Vault</strong>: Tools for aspiring artists, including
+                    lyric breakdowns and beat previews.
+                  </p>
+                </div>
+                <div className='flex items-start'>
+                  <FiGift className='mr-2 text-indigo-500 dark:text-indigo-400' />
+                  <p>
+                    <strong>Bonus Perks</strong>: Yearly members get a personalized shout-out
+                    or signed album art print.
+                  </p>
+                </div>
               </div>
 
-              <button
-                className={twMerge(
-                  clsx(
-                    'mt-8 w-full rounded-md bg-oh-yea-blue-light px-16 py-2',
-                    'text-snow-white transition-colors duration-200',
-                    'hover:bg-indigo-600 dark:bg-indigo-400',
-                    'dark:hover:bg-indigo-500',
-                    'rounded font-medium tracking-wide',
-                    'shadow-md transition duration-200',
-                    'hover:scale-105 hover:bg-gray-500 focus:outline-none active:opacity-[0.2]',
-                    'md:mb-0 md:mr-4 md:w-auto dark:bg-oh-yea-blue dark:hover:bg-gray-600',
-                  ),
-                )}
-              >
-                Choose Plan
+              {/* Pricing */}
+              <div className='mt-4 flex items-baseline'>
+                <span className='text-3xl font-bold text-slate-900 dark:text-white'>$9</span>
+                <span className='ml-2 text-slate-500 dark:text-gray-400'>/mo</span>
+                <span className='ml-auto text-sm font-medium text-indigo-500 dark:text-indigo-400'>
+                  Save 20% on the yearly plan!
+                </span>
+              </div>
+
+              {/* CTA Button */}
+              <button className='mt-8 w-full rounded-md bg-indigo-500 px-6 py-2 text-white transition-transform duration-200 hover:scale-105 hover:bg-indigo-600 focus:outline-none active:opacity-80 dark:bg-indigo-400 dark:hover:bg-indigo-500'>
+                Join Now
               </button>
             </div>
           </div>
         </div>
 
-        {/* Right Side: Article Section */}
-        <article className='relative isolate mx-auto flex flex-col justify-end overflow-hidden rounded-2xl tablet:w-1/2'>
+        {/* Right Side IMAGE: Article Section */}
+        <article className='relative isolate mx-auto flex w-full flex-col justify-end overflow-hidden rounded-2xl tablet:w-2/3 desktop:w-1/2'>
           {/* Background Image */}
           <img
             src='https://images.unsplash.com/photo-1499856871958-5b9627545d1a'
