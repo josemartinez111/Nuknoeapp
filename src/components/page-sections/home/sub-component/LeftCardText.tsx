@@ -25,14 +25,14 @@ export const LeftCardText: FunctionComponent = () => {
                   'bg-teal-accent-400 mb-4 inline-block',
                   'rounded-full px-3 py-px text-xs font-semibold',
                   'uppercase tracking-wider text-teal-900',
-                  'dark:bg-oh-yea-blue-light dark:text-white',
+                  'bg-gray-800 text-white dark:bg-oh-yea-blue-light',
                 ),
               )}
             >
               Brand new
             </p>
           </div>
-          <h2 className='mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none dark:text-white'>
+          <h2 className='mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-black shadow-2xl sm:text-4xl sm:leading-none dark:text-white'>
             From Lyrics to Literature:
             <br className='hidden md:block' />
             Stories{' '}
