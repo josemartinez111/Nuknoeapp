@@ -47,18 +47,6 @@ export const RootLayout: FunctionComponent = () => {
                 willChange: 'transform',
               }}
             />
-
-            {/*<img*/}
-            {/*  src={NuknoeBGAlbumCover}*/}
-            {/*  alt='Background'*/}
-            {/*  className='h-[75vh] w-full object-cover object-top tablet:h-auto tablet:min-h-full tablet:scale-105'*/}
-            {/*  style={{*/}
-            {/*    imageRendering: '-webkit-optimize-contrast',*/}
-            {/*    backfaceVisibility: 'hidden',*/}
-            {/*    transform: 'translateZ(0) scale(1.02)',*/}
-            {/*    willChange: 'transform',*/}
-            {/*  }}*/}
-            {/*/>*/}
           </div>
 
           {/* Separate Overlay */}

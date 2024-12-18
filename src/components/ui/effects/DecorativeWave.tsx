@@ -5,16 +5,26 @@ import clsx from 'clsx';
 //                       IMPORTS
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 import { FunctionComponent, Fragment } from 'react';
+import { twMerge } from 'tailwind-merge';
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-export const DecorativeWave: FunctionComponent = () => {
+export const DecorativeWave: FunctionComponent<{ className?: string }> = ({
+  className = '',
+}) => {
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
   return (
     <Fragment>
       {/*  ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞  */}
-      <div className='absolute bottom-0 left-0 right-0 z-[5]'>
+      <div
+        className={twMerge(
+          clsx(
+            'absolute left-0 right-0 z-[5]', // Always span horizontally
+            className.includes('top') ? '-top-px' : 'bottom-0', // Adjust for top or bottom
+          ),
+        )}
+      >
         <svg
           viewBox='0 0 1440 120'
           fill='none'
@@ -27,7 +37,7 @@ export const DecorativeWave: FunctionComponent = () => {
             1320 75 1380 75L1440 75V120H1380C1320 120 1200 120
             1080 120C960 120 840 120 720 120C600 120 480 120
             360 120C240 120 120 120 60 120H0Z'
-            className={clsx('fill-white', 'dark:fill-gray-900')}
+            className={clsx('fill-white', 'dark:fill-gray-900', className)}
           />
         </svg>
       </div>

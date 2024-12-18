@@ -8,7 +8,7 @@ import { FunctionComponent, Fragment } from 'react';
 import { FaTshirt } from 'react-icons/fa';
 import { FiGift, FiLock, FiVideo } from 'react-icons/fi';
 import { twMerge } from 'tailwind-merge';
-import { NuknoeBGLightmode2 } from '../../../assets';
+import { NuknoeBGLightmode2, NuknoeMicCheck } from '../../../assets';
 import { FWTImage } from '../../utils/FWTImage.tsx';
 import clsx from 'clsx';
 //⚫️ ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
@@ -58,7 +58,7 @@ export const HomePricingSection: FunctionComponent = () => {
             <div className='shrink-0'>
               <FWTImage
                 className='h-48 w-full object-cover tablet:h-full tablet:w-48'
-                src={NuknoeBGLightmode2}
+                src={NuknoeMicCheck}
                 alt='Promo Image'
               />
             </div>
@@ -137,7 +137,16 @@ export const HomePricingSection: FunctionComponent = () => {
               </div>
 
               {/* CTA Button */}
-              <button className='mt-8 w-full rounded-md bg-indigo-500 px-6 py-2 text-white transition-transform duration-200 hover:scale-105 hover:bg-indigo-600 focus:outline-none active:opacity-80 dark:bg-indigo-400 dark:hover:bg-indigo-500'>
+              <button
+                className={twMerge(
+                  clsx(
+                    'mt-8 w-full rounded-md bg-oh-yea-blue-light px-6 py-2',
+                    'text-white transition-transform duration-200',
+                    'hover:scale-105 hover:bg-gray-500 focus:outline-none',
+                    'active:opacity-80 dark:bg-oh-yea-blue dark:hover:bg-gray-600',
+                  ),
+                )}
+              >
                 Join Now
               </button>
             </div>

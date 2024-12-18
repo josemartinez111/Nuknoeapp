@@ -12,6 +12,7 @@ export { default as NuknoeBGLightmode2 } from './images/nuknoe-lightmode2.png';
 export { default as NuknoeBGAlbumCover } from './images/nuknoe-album-cover-bg.png';
 export { default as NuknoeWhiteText } from './images/nuknoe-whitetext.png';
 export { default as NuknoeBlackText } from './images/nuknoe-blacktext.png';
+export { default as NuknoeMicCheck } from './images/nuknoe-mic-check.png';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // FOOTER->route
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
