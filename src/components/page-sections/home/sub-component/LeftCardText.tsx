@@ -32,7 +32,7 @@ export const LeftCardText: FunctionComponent = () => {
               Brand new
             </p>
           </div>
-          <h2 className='mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-black shadow-2xl sm:text-4xl sm:leading-none dark:text-white'>
+          <h2 className='mb-6 max-w-lg font-sans text-3xl font-bold tracking-tight text-black sm:text-4xl sm:leading-none dark:text-white'>
             From Lyrics to Literature:
             <br className='hidden md:block' />
             Stories{' '}

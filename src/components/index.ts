@@ -9,6 +9,7 @@
 export * from './page-sections/home/HomeHeroSection';
 export * from './page-sections/home/HomePricingSection';
 export * from './page-sections/home/HomeAboutSection';
+export * from './page-sections/home/HomeContentSection';
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 // utils components->router
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞

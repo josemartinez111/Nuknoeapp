@@ -57,7 +57,7 @@ export const HomePricingSection: FunctionComponent = () => {
             {/* Image Section */}
             <div className='shrink-0'>
               <FWTImage
-                className='h-48 w-full object-cover tablet:h-full tablet:w-48'
+                className='h-48 w-full object-cover object-top tablet:h-full tablet:w-48 desktop:object-cover'
                 src={NuknoeMicCheck}
                 alt='Promo Image'
               />
