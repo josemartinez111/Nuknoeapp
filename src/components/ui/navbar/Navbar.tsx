@@ -8,7 +8,7 @@ import { FunctionComponent, Fragment } from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { twMerge } from 'tailwind-merge';
 import { NuknoeBlackText, NuknoeWhiteText } from '../../../assets';
-import { SocialIcons, FWTImage } from '../../../components';
+import { SocialIcons, FWTImage, IconNameType } from '../../../components';
 import { useDarkModeStore } from '../../../lib';
 import { ToggleDarkmodeIcons } from './ToggleDarkmodeIcons.tsx';
 // import { twMerge } from 'tailwind-merge';
@@ -22,6 +22,7 @@ import { ToggleDarkmodeIcons } from './ToggleDarkmodeIcons.tsx';
 //   label: string;
 //   href: string;
 // }
+
 // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
 // Atom for managing sidebar state
@@ -31,6 +32,16 @@ import { ToggleDarkmodeIcons } from './ToggleDarkmodeIcons.tsx';
 export const Navbar: FunctionComponent = () => {
   // ∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
   const { isDarkMode, toggleDarkMode } = useDarkModeStore();
+
+  // Use the IconName type directly for the array
+  const socialIconsOpts: Array<IconNameType> = [
+    'youtube',
+    'facebook',
+    'instagram',
+    'tiktok',
+    'threads',
+  ];
+
   // const [isSidebarOpen, setIsSidebarOpen] = useAtom(sidebarAtom);
   //
   // // Placeholder links
@@ -61,13 +72,13 @@ export const Navbar: FunctionComponent = () => {
                 <FWTImage
                   src={NuknoeWhiteText}
                   alt='Nuknoe white text'
-                  className='ml-[1.2rem] hidden h-28 w-auto object-contain tablet:h-16 desktop:h-24 dark:block'
+                  className='ml-[1.2rem] hidden h-12 w-auto object-contain tablet:h-16 desktop:h-24 dark:block'
                 />
                 {/* Show Black Text in Light Mode */}
                 <FWTImage
                   src={NuknoeBlackText}
                   alt='Nuknoe black text'
-                  className='ml-[1.2rem] block h-28 w-auto object-contain tablet:h-16 desktop:h-24 dark:hidden'
+                  className='ml-[1.2rem] block h-12 w-auto object-contain tablet:h-16 desktop:h-24 dark:hidden'
                 />
               </div>
             </a>
@@ -75,34 +86,36 @@ export const Navbar: FunctionComponent = () => {
           {/* END OF LOGO ∞∞∞ */}
 
           {/* SOCIAL ICONS ∞∞∞ */}
-          <div className='flex items-center gap-2 pl-16 text-black tablet:gap-6 desktop:gap-8'>
-            <SocialIcons
-              iconName='youtube'
-              className='w-3 text-black tablet:h-6 tablet:w-6 desktop:w-6 dark:text-snow-white'
-            />
-            <SocialIcons
-              iconName='facebook'
-              className='w-3 text-black tablet:h-6 tablet:w-6 desktop:w-6 dark:text-snow-white'
-            />
-            <SocialIcons
-              iconName='instagram'
-              className='w-3 text-black tablet:h-6 tablet:w-6 desktop:w-6 dark:text-snow-white'
-            />
-            <SocialIcons
-              iconName='tiktok'
-              className='w-3 text-black tablet:h-6 tablet:w-6 desktop:w-6 dark:text-snow-white'
-            />
-            <SocialIcons
-              iconName='threads'
-              className='w-3 text-black tablet:h-6 tablet:w-6 desktop:w-6 dark:text-snow-white'
-            />
+          <div
+            className={twMerge(
+              clsx(
+                'hidden items-center gap-2 pl-16 text-black tablet:flex',
+                'tablet:gap-6 desktop:gap-8',
+              ),
+            )}
+          >
+            {socialIconsOpts.map((icon: IconNameType) => (
+              <SocialIcons
+                key={icon}
+                iconName={icon}
+                className={twMerge(
+                  clsx(
+                    'w-3 text-black',
+                    'tablet:h-6 tablet:w-6 desktop:w-6',
+                    'dark:text-snow-white',
+                  ),
+                )}
+              />
+            ))}
           </div>
           {/* END OF SOCIAL ICONS ∞∞∞ */}
 
           {/* Hamburger Button and Toggle Icons ∞∞∞ */}
           <div className='flex-initial'>
             <div
-              className={twMerge(clsx('relative flex items-center', 'justify-end space-x-2'))}
+              className={twMerge(
+                clsx('relative ml-32 flex items-center', 'justify-end space-x-2'),
+              )}
             >
               {/* Toggle Darkmode Icons ∞∞∞ */}
               <ToggleDarkmodeIcons
